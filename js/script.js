@@ -92,3 +92,24 @@ function myFunction1() {
       moreText.style.display ="inline";
     }
   }
+
+document.getElementById('form').addEventListener('submit', function(event) {
+  event.preventDefault();
+
+  const btn = document.querySelector('button[type="submit"]');
+  btn.textContent = 'Sending...';
+
+  const serviceID = 'service_v7jmzd9';
+  const templateID = 'template_m4vpzzn';
+
+  emailjs.sendForm(serviceID, templateID, this)
+    .then(() => {
+      btn.textContent = 'Send';
+      alert('Email sent successfully!');
+      document.getElementById('form').reset();
+    })
+    .catch((error) => {
+      btn.textContent = 'Send';
+      alert('An error occurred while sending the email: ' + error);
+    });
+});

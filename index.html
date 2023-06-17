@@ -5,7 +5,6 @@
     <title>Placement and Training</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
     <link rel="stylesheet" href="css/style.css">
-
 </head>
 
 <body>
@@ -239,19 +238,18 @@
                 <h1>contact us form</h1>
             </div>
             <div class="contact-form">
-                <form method="post" action="contact.php">
+                <form id="form">
                     <div class="input-fields">
-
-                        <input type="text" class="input" placeholder="Name" name="name">
-                        <input type="email" class="input" placeholder="Email Address" name="email"
-                            pattern=".+@gmail\.com">
-                        <input type="phone" class="input" placeholder="Phone" name="phone">
-                        <input type="text" class="input" placeholder="Subject" name="subject">
+                      <input type="text" class="input" placeholder="Name" name="name" required>
+                      <input type="email" class="input" placeholder="Email Address" name="email" pattern=".+@gmail\.com" required>
+                      <input type="text" class="input" placeholder="Phone" name="phone" required>
+                      <input type="text" class="input" placeholder="Subject" name="subject" required>
                     </div>
                     <div class="msg">
-                        <textarea placeholder="Message" name="message"></textarea>
-                        <div class="btn1"><button type="submit">send</div>
-                </form>
+                      <textarea placeholder="Message" name="message" required></textarea>
+                      <div class="btn1"><button type="submit">Send</button></div>
+                    </div>
+                  </form>
             </div>
         </div>
         </div>
@@ -294,7 +292,12 @@
         <div class="credit">created by <span>Team</span> | all rights reserved!</div>
     </section>
     <!-- footer section ends -->
-    <script src="js/script.js"></script>
+    <script type="text/javascript"
+    src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+  <script type="text/javascript">
+    emailjs.init('YDbAlmI5-9AMOEvDo')
+  </script>
+      <script src="js/script.js"></script>
 </body>
 
 </html>
